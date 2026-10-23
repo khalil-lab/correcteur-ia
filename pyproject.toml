@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "correcteur-ia"
+version = "0.1.0"
+description = "Correct selected text in any Wayland application with a global shortcut and a local Ollama model."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Khalil Soltani" }]
+keywords = ["linux", "wayland", "ollama", "llm", "gnome", "productivity", "writing"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+correcteur-ia = "correcteur_ia:main"
+
+[tool.setuptools]
+py-modules = ["correcteur_ia"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
